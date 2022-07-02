@@ -16,7 +16,7 @@ class thirdScreen extends StatelessWidget {
               Row(
                 children: [
                   Text(
-                    "Hii, Lokesh",
+                    "Hii, Gauri",
                     style: TextStyle(fontSize: 30),
                   ),
                 ],
