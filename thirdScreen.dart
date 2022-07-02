@@ -2,8 +2,8 @@ import 'package:flutter/material.dart';
 
 class thirdScreen extends StatelessWidget {
   DateTime today = DateTime.now();
-  // String name;
-  thirdScreen({Key? key}) : super(key: key);
+  String name;
+  thirdScreen({Key? key, required this.name}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
@@ -16,7 +16,7 @@ class thirdScreen extends StatelessWidget {
               Row(
                 children: [
                   Text(
-                    "Hii, Gauri",
+                    "Hii, ${name}",
                     style: TextStyle(fontSize: 30),
                   ),
                 ],
