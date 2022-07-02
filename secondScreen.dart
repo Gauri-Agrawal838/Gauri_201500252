@@ -4,6 +4,7 @@ import 'package:flutter/material.dart';
 class login extends StatelessWidget {
   TextEditingController _name = TextEditingController();
   TextEditingController _email = TextEditingController();
+  String? _nameerror = null;
   login({Key? key}) : super(key: key);
 
   @override
@@ -40,6 +41,7 @@ class login extends StatelessWidget {
                 controller: _name,
                 decoration: InputDecoration(
                     icon: Icon(Icons.person),
+                    errorText: _nameerror,
                     labelText: "Student Name",
                     hintText: "Enter your name",
                     border: UnderlineInputBorder()),
@@ -52,6 +54,7 @@ class login extends StatelessWidget {
                 keyboardType: TextInputType.emailAddress,
                 decoration: InputDecoration(
                     icon: Icon(Icons.alternate_email_outlined),
+                    errorText: _nameerror,
                     labelText: "Email Id",
                     hintText: "Enter your email id",
                     border: UnderlineInputBorder()),
@@ -64,10 +67,29 @@ class login extends StatelessWidget {
                 width: 300,
                 child: ElevatedButton(
                     onPressed: () {
-                      Navigator.push(context,
-                          MaterialPageRoute(builder: (context) {
-                        return thirdScreen();
-                      }));
+                      final name = _name.text;
+                      final email = _email.text;
+                      if (name.isEmpty || email.isEmpty) {
+                        showDialog(
+                            context: context,
+                            builder: (context) {
+                              return AlertDialog(
+                                  title: Text("Failed"),
+                                  content: Text("Field can not be empty"),
+                                  actions: [
+                                    TextButton(
+                                        onPressed: () {
+                                          Navigator.pop(context);
+                                        },
+                                        child: Text("Ok"))
+                                  ]);
+                            });
+                      } else {
+                        Navigator.push(context,
+                            MaterialPageRoute(builder: (context) {
+                          return thirdScreen(name: _name.text);
+                        }));
+                      }
                     },
                     child: Text(
                       "Login",
