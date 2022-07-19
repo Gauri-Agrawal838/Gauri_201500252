@@ -1,7 +1,7 @@
 # Gauri_201500252
 - App is based on Flutter using Dart Language
 
-- There will be three screens in this App.
+- There will be four screens in this App.
 
            a. Get Started
  
@@ -9,7 +9,7 @@
            
            c. Flutter Logo as Splash Screen
            
-           d. Training Completion
+           d. Training Completion Screen
            
 ![1](https://user-images.githubusercontent.com/73654083/179743716-6727472c-ab42-4bfb-94f5-c03dad5e258b.jpeg)
 ![2](https://user-images.githubusercontent.com/73654083/179743725-8ee889c2-c691-4cdf-83b0-00410b5e6719.jpeg)
